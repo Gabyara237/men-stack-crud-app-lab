@@ -11,6 +11,12 @@ mongoose.connection.on("connected",()=>{
     console.log(`Connect to MongoDB ${mongoose.connection.name}`);
 })
 
+// Routes
+
+app.get('/',(req,res)=>{
+    res.render('index.ejs')
+})
+
 app.listen('3000', ()=>{
     console.log("Listening on port 3000")
 } )
