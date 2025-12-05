@@ -7,6 +7,7 @@ const petSchema = new mongoose.Schema({
     isReadyForAdoption: {type: Boolean, required:true},
     gender: {type: String,require: true},
     location: {type: String, require: true},
+    contact:{type: String,require},
     breed: String,
     age: Number,
     description: String,

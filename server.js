@@ -14,7 +14,11 @@ mongoose.connection.on("connected",()=>{
 // Routes
 
 app.get('/',(req,res)=>{
-    res.render('index.ejs')
+    res.render('index.ejs');
+})
+
+app.get('/pets/new',(req,res)=>{
+    res.render('pets/new.ejs');
 })
 
 app.listen('3000', ()=>{

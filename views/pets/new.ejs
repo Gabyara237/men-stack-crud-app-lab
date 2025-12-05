@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Pet</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Create new pet to be adopted!</h1>
+        <form action="/pets" method="POST">
+            <fieldset>
+                <legend>Pet Information</legend>
+
+                <label for="name">Pet's name:</label>
+                <input type="text" name="name" id="name" required>
+                
+                <label for="species">Pet species:</label>
+                <select name="species" id="species" required>
+                    <option value="dog">Dog</option>
+                    <option value="cat">Cat</option>
+                </select>
+
+                <label for="size">Pet Size: </label>
+                <select name="size" id="size" required>
+                    <option value ="small">Small</option>
+                    <option value ="medium"> Medium</option>
+                    <option value ="large">Large</option>
+                </select>
+
+                <label for="gender">Pet Gender</label>
+                <select name="gender" id="gender" required>
+                    <option value ="male">Male</option>
+                    <option value ="female">Female</option>
+                </select>
+
+                <label for="breed"> Pet Breed</label>
+                <input type="text" name="breed" id="breed">
+
+                <label for="age"> Pet Age</label>
+                <input type="number" name="age" id="age">
+                
+                <label for="description">Pet Description</label>
+                <textarea name="description" id="description"></textarea>
+
+                <label for="isReadyForAdoption">Ready For Adoption?</label>
+                <input type ="checkbox" name="isReadyForAdoption" id="isReadyForAdoption" required>
+            </fieldset>
+
+            <fieldset>
+                <legend>Contact information</legend>
+
+                <label for="email">Email:</label>
+                <input type="email" name="email" id="email" required>
+
+                <label for="location">Location:</label>
+                <input type="text" name="location" id="location" required>
+            </fieldset>
+            <button type="submit">Create new pet</button>
+        </form>
+    </div>
+    
+</body>
+</html>
