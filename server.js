@@ -3,6 +3,8 @@ const express = require('express');
 const dotenv = require('dotenv');
 const methodOverride = require("method-override");
 const morgan = require('morgan');
+const path = require("path");
+
 dotenv.config();
 
 const Pet = require('./models/pet')
@@ -11,6 +13,7 @@ const app = express();
 app.use(express.urlencoded({extended:false}));
 app.use(methodOverride("_method"));
 app.use(morgan("dev"));
+app.use(express.static(path.join(__dirname, "public")));
 
 mongoose.connect(process.env.MONGODB_URI);
 
