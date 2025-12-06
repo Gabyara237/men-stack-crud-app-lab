@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%=foundPet.name%></title>
+</head>
+<body>
+    <div class="container">
+        <h1><%=foundPet.name%></h1>
+        <div class="info-container">
+            <img src=`${foundPet.imageUrl}`>
+            <div>
+                <p><%=foundPet.species%></p>
+                <p><%=foundPet.size%></p>
+                <p><%=foundPet.gender%></p>
+                <p><%=foundPet.breed%></p>
+                <p><%=foundPet.age%></p>
+                <p><%=foundPet.descripcion%></p>
+            </div>
+
+            <div class="contact-container">
+                <p><%=foundPet.contact%></p>
+                <p><%=foundPet.email%></p>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>

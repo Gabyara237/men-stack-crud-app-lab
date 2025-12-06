@@ -10,7 +10,7 @@
 
         <%allPets.forEach((pet)=>{%>
             <div>
-                <p><%=pet.name%></p>
+                <p><a href="/pets/<%=pet._id%>"><%=pet.name%></a></p>
                 <img src="<%=pet.imageUrl%>">
             </div>
         <%})%>

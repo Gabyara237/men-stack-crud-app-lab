@@ -40,6 +40,12 @@ app.get('/pets', async(req,res)=>{
     res.render('pets/index.ejs', {allPets:allPets});
 })
 
+app.get('/pets/:petsId', async(req, res)=>{
+    const foundPet = await Pet.findById(req.params.petsId);
+    res.render('pets/show.ejs', {foundPet: foundPet});
+})
+
+
 app.listen('3000', ()=>{
     console.log("Listening on port 3000")
 } )
