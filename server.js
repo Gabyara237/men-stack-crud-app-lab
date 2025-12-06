@@ -46,7 +46,25 @@ app.get('/pets', async(req,res)=>{
 
 app.get('/pets/:petsId', async(req, res)=>{
     const foundPet = await Pet.findById(req.params.petsId);
-    res.render('pets/show.ejs', {foundPet: foundPet});
+    res.render('pets/show.ejs', {pet: foundPet});
+})
+
+
+app.get('/pets/:petsId/edit', async(req,res)=>{
+    const foundPet = await Pet.findById(req.params.petsId);
+    res.render('pets/edit.ejs',{pet:foundPet});
+})
+
+app.put('/pets/:petsId',async(req,res)=>{
+    if (req.body.isReadyForAdoption === "on") {
+    req.body.isReadyForAdoption = true;
+  } else {
+    req.body.isReadyForAdoption = false;
+  }
+  
+  await Pet.findByIdAndUpdate(req.params.petsId, req.body);
+  res.redirect(`/pets/${req.params.petsId}`);
+
 })
 
 app.delete('/pets/:petsId', async(req, res)=>{

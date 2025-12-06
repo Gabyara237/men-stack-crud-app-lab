@@ -3,30 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%=foundPet.name%></title>
+    <title><%=pet.name%></title>
 </head>
 <body>
     <div class="container">
-        <h1><%=foundPet.name%></h1>
+        <h1><%=pet.name%></h1>
         <div class="info-container">
-            <img src=`${foundPet.imageUrl}`>
+            <img src=`${pet.imageUrl}`>
             <div>
-                <p><%=foundPet.species%></p>
-                <p><%=foundPet.size%></p>
-                <p><%=foundPet.gender%></p>
-                <p><%=foundPet.breed%></p>
-                <p><%=foundPet.age%></p>
-                <p><%=foundPet.descripcion%></p>
+                <p><%=pet.species%></p>
+                <p><%=pet.size%></p>
+                <p><%=pet.gender%></p>
+                <p><%=pet.breed%></p>
+                <p><%=pet.age%></p>
+                <p><%=pet.descripcion%></p>
             </div>
 
             <div class="contact-container">
-                <p><%=foundPet.contact%></p>
-                <p><%=foundPet.email%></p>
+                <p><%=pet.contact%></p>
+                <p><%=pet.email%></p>
             </div>
 
         </div>
-        <form action="/pets/<%=foundPet._id%>?_method=DELETE" method="POST">
-            <button type="submit" >Delete <%=foundPet.name%></button>
+        <a href="/pets/<%=pet._id%>/edit"> Edit Pet</a>
+        <form action="/pets/<%=pet._id%>?_method=DELETE" method="POST">
+            <button type="submit" >Delete <%=pet.name%></button>
         </form>
     </div>
 </body>
