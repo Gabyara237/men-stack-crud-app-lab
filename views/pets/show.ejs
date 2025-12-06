@@ -25,6 +25,9 @@
             </div>
 
         </div>
+        <form action="/pets/<%=foundPet._id%>?_method=DELETE" method="POST">
+            <button type="submit" >Delete <%=foundPet.name%></button>
+        </form>
     </div>
 </body>
 </html>
