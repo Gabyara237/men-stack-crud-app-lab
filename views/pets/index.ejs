@@ -6,7 +6,10 @@
         <title>All Pets</title>
     </head>
     <body>
-        <h2>Meet your partner today</h2>
+        <header>
+            <%- include('../partials/nav') %>
+            <h2>Meet your partner today</h2>
+        </header>
 
         <%allPets.forEach((pet)=>{%>
             <div>

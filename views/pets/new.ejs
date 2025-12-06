@@ -6,8 +6,12 @@
     <title>New Pet</title>
 </head>
 <body>
+    <header>
+        <%- include('../partials/nav') %>
+        <h2>Create new pet to be adopted!</h2>
+    </header>
     <div class="container">
-        <h1>Create new pet to be adopted!</h1>
+
         <form action="/pets" method="POST">
             <fieldset>
                 <legend>Pet Information</legend>

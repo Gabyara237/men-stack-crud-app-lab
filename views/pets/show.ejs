@@ -6,8 +6,11 @@
     <title><%=pet.name%></title>
 </head>
 <body>
+    <header>
+        <%- include('../partials/nav') %>
+        <h2><%=pet.name%></h2>
+    </header>
     <div class="container">
-        <h1><%=pet.name%></h1>
         <div class="info-container">
             <img src=`${pet.imageUrl}`>
             <div>
