@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>All Pets</title>
+    </head>
+    <body>
+        <h2>Meet your partner today</h2>
+
+        <%allPets.forEach((pet)=>{%>
+            <div>
+                <p><%=pet.name%></p>
+                <img src="<%=pet.imageUrl%>">
+            </div>
+        <%})%>
+        
+    </body>
+</html>
