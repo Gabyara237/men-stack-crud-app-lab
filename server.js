@@ -71,7 +71,7 @@ app.put('/pets/:petsId',async(req,res)=>{
 })
 
 app.delete('/pets/:petsId', async(req, res)=>{
-    const foundPet = await Pet.findOneAndDelete(req.params.petsId);
+    const foundPet = await Pet.findByIdAndDelete(req.params.petsId);
     res.redirect('/pets');
 })
 
