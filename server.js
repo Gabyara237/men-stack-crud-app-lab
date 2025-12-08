@@ -37,6 +37,11 @@ app.post('/pets', async(req,res)=>{
     }else{
         req.body.isReadyForAdoption = false;
     }
+    if(req.body.imageUrl==="" && req.body.species==="dog"){
+        req.body.imageUrl = "https://images.unsplash.com/vector-1740286698618-7f01b97f6899?q=80&w=1760&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    }else if(req.body.imageUrl==="" && req.body.species==="cat"){
+        req.body.imageUrl = "https://images.unsplash.com/vector-1741847236185-27b1ff478511?q=80&w=1439&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    }
 
     await Pet.create(req.body);
     res.redirect('/pets');
