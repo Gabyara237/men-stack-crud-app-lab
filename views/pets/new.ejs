@@ -7,14 +7,14 @@
     <title>New Pet</title>
 </head>
 <body>
-    <header>
-        <%- include('../partials/nav') %>
-        <h2>Create new pet to be adopted!</h2>
-    </header>
     <div class="container">
-
-        <form action="/pets" method="POST">
-            <fieldset>
+        <header>
+            <%- include('../partials/nav') %>
+        </header>
+        <h2>Create new pet to be adopted!</h2>
+        
+        <form class="form" action="/pets" method="POST">
+            <fieldset class="fieldset-1">
                 <legend>Pet Information</legend>
 
                 <label for="name">Pet's name:</label>
@@ -45,13 +45,15 @@
                 <label for="age"> Pet Age</label>
                 <input type="number" name="age" id="age">
                 
-                <label for="description">Pet Description</label>
-                <textarea name="description" id="description"></textarea>
                 
                 <label for ="imageUrl"> Pet image Url:</label>
                 <input type="text" name="imageUrl" id="imageUrl">
-                <label for="isReadyForAdoption">Ready For Adoption?</label>
-                <input type ="checkbox" name="isReadyForAdoption" id="isReadyForAdoption">
+                <label for="description">Pet Description</label>
+                <textarea name="description" id="description"></textarea>
+                <div class="checkbox">
+                    <label for="isReadyForAdoption">Ready For Adoption?</label>
+                    <input type ="checkbox" name="isReadyForAdoption" id="isReadyForAdoption">
+                </div>
             </fieldset>
 
             <fieldset>
