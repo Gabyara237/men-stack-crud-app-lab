@@ -7,17 +7,21 @@
         <title>All Pets</title>
     </head>
     <body>
-        <header>
-            <%- include('../partials/nav') %>
+        <div class="container">
+            <header>
+                <%- include('../partials/nav') %>
+            </header>
             <h2>Meet your partner today</h2>
-        </header>
-
-        <%allPets.forEach((pet)=>{%>
-            <div>
-                <p><a href="/pets/<%=pet._id%>"><%=pet.name%></a></p>
-                <img src="<%=pet.imageUrl%>">
+            <div class="all-pets-container">
+                <%allPets.forEach((pet)=>{%>
+                    <a href="/pets/<%=pet._id%>">
+                        <div class="card-container">
+                            <img class="pet-img" src="<%=pet.imageUrl%>">
+                            <p>Name: <%=pet.name%></p>
+                        </div>
+                    </a>
+                <%})%>
             </div>
-        <%})%>
-        
+        </div>
     </body>
 </html>

@@ -17,9 +17,31 @@ h1{
     color: #3b89dd;
 }
 
+h2{
+    font-size: 40px;
+    color: #eb8487;
+}
+header{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-self: flex-start;  
+    padding: 20px;
+}
+
+a{
+    text-decoration: none; 
+}
+
+.a-nav{
+    color: #eb5155;
+    font-size: 20px;
+    font-weight: 500;
+}
 
 /* CSS main page */
-.main-container{
+.main-container, .container{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -30,6 +52,13 @@ h1{
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
     
 }
+
+.container{
+    justify-content: flex-start; 
+    width: 70%;
+    min-height: 80vh;
+}
+
 
 .main-img{
     width: 800px;
@@ -44,7 +73,7 @@ h1{
     text-decoration: none; 
 }
 
-.url-options:hover{
+.url-options:hover, .a-nav:hover {
     transform: scale(1.1);
 }
 
@@ -52,4 +81,68 @@ h1{
     margin-top: 20px;
     display: flex;
     gap:30px;
+}
+
+.all-pets-container{
+    width:80%;
+    display: flex;
+    gap: 30px;
+}
+
+.card-container {
+    background-color: rgb(244 156 159 / 64%);
+    border-radius: 20px;
+    padding: 20px;
+    margin-bottom: 1rem;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 1px 1px 5px rgba(118, 117, 117, 0.3);
+
+}
+.card-container:hover{
+    transform: scale(1.1);
+}
+.pet-img{
+    width: 120px;
+    border-radius: 10px;
+}
+
+.pet-img-info{
+    width: 300px;
+    border-radius: 10px;
+}
+
+nav{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.info-container{
+    display: flex;
+    padding: 30px;
+    gap: 30px;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    padding: 0 40px 0 40px;
+}
+
+
+.fieldset-1{
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.checkbox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
