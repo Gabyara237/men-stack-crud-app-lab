@@ -7,32 +7,38 @@
     <title><%=pet.name%></title>
 </head>
 <body>
-    <header>
-        <%- include('../partials/nav') %>
-        <h2><%=pet.name%></h2>
-    </header>
     <div class="container">
+        <header>
+            <%- include('../partials/nav') %>
+        </header>
         <div class="info-container">
-            <img src=`${pet.imageUrl}`>
+            <img class="pet-img-info" src="<%=pet.imageUrl%>">
             <div>
-                <p><%=pet.species%></p>
-                <p><%=pet.size%></p>
-                <p><%=pet.gender%></p>
-                <p><%=pet.breed%></p>
-                <p><%=pet.age%></p>
-                <p><%=pet.descripcion%></p>
-            </div>
+                <h2><%=pet.name%></h2>
+            
+                <div class="detail-pet">
+                    <h3>Pet information</h3>
+                    <p>Species: <%=pet.species%></p>
+                    <p>Size: <%=pet.size%></p>
+                    <p>Gender: <%=pet.gender%></p>
+                    <p>Breed: <%=pet.breed%></p>
+                    <p>Age: <%=pet.age%></p>
+                    <p>Descripcion: <%=pet.description%></p>
+                    <p>Ready For Adoption?: <%= pet.isReadyForAdoption ? 'Yes' : 'No' %></p>                </div>
 
-            <div class="contact-container">
-                <p><%=pet.contact%></p>
-                <p><%=pet.email%></p>
+                <div class="contact-container">
+                    <h3>Contact information</h3>
+                    <p><%=pet.email%></p>
+                    <p><%=pet.location%></p>
+                </div>
             </div>
-
         </div>
-        <a href="/pets/<%=pet._id%>/edit"> Edit Pet</a>
-        <form action="/pets/<%=pet._id%>?_method=DELETE" method="POST">
-            <button type="submit" >Delete <%=pet.name%></button>
-        </form>
+        <div class="main-options">
+            <a href="/pets/<%=pet._id%>/edit"> Edit Pet</a>
+            <form action="/pets/<%=pet._id%>?_method=DELETE" method="POST">
+                <button type="submit">Delete <%=pet.name%></button>
+            </form>
+        </div>
     </div>
 </body>
 </html>
