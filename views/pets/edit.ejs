@@ -7,36 +7,36 @@
     <title>Update Pet</title>
 </head>
 <body>
-    <header>
-        <%- include('../partials/nav') %>
-        <h2>Update pet</h2>
-    </header>
     <div class="container">
-    
+        <header>
+            <%- include('../partials/nav') %>
+        </header>
+        <h2>Update pet</h2>
+        
         <form action="/pets/<%=pet._id%>?_method=PUT" method="POST">
-            <fieldset>
+            <fieldset class="fieldset-1">
                 <legend>Pet Information</legend>
 
                 <label for="name">Pet's name:</label>
                 <input type="text" name="name" id="name" value="<%=pet.name%>" required>
                 
                 <label for="species">Pet species:</label>
-                <select name="species" id="species" value="<%=pet.species%>" required>
-                    <option value="dog">Dog</option>
-                    <option value="cat">Cat</option>
+                <select name="species" id="species" required>
+                    <option value="dog" <%= pet.species === 'dog' ? 'selected' : '' %>>Dog</option>
+                    <option value="cat" <%= pet.species === 'cat' ? 'selected' : '' %>>Cat</option>
                 </select>
 
                 <label for="size">Pet Size: </label>
-                <select name="size" id="size" value="<%=pet.size%>"  required>
-                    <option value ="small">Small</option>
-                    <option value ="medium"> Medium</option>
-                    <option value ="large">Large</option>
+                <select name="size" id="size"  required>
+                    <option value ="small" <%=pet.size ==='small' ? 'selected' : ''%> >Small</option>
+                    <option value ="medium" <%=pet.size ==='medium' ? 'selected' : ''%>> Medium</option>
+                    <option value ="large" <%=pet.size ==='large' ? 'selected' : ''%>>Large</option>
                 </select>
 
                 <label for="gender">Pet Gender</label>
                 <select name="gender" id="gender" value="<%=pet.gender%>" required>
-                    <option value ="male">Male</option>
-                    <option value ="female">Female</option>
+                    <option value ="male"<%=pet.gender ==='male' ? 'selected' : ''%>>Male</option>
+                    <option value ="female"<%=pet.gender ==='female' ? 'selected' : ''%>>Female</option>
                 </select>
 
                 <label for="breed"> Pet Breed</label>
@@ -45,15 +45,16 @@
                 <label for="age"> Pet Age</label>
                 <input type="number" name="age" id="age" value="<%=pet.age%>" >
                 
-                <label for="description">Pet Description</label>
-                <textarea name="description" id="description" value="<%=pet.description%>" ></textarea>
-                
                 <label for ="imageUrl"> Pet image Url:</label>
                 <input type="text" name="imageUrl" id="imageUrl" value="<%=pet.imageUrl%>" >
-
-
-                <label for="isReadyForAdoption">Ready For Adoption?</label>
-                <input type ="checkbox" name="isReadyForAdoption" id="isReadyForAdoption" <% if (pet.isReadyForAdoption) { %>checked<% } %> >
+                
+                <label for="description">Pet Description</label>
+                <textarea name="description" id="description"><%=pet.description%></textarea>
+                
+                <div class="checkbox">
+                    <label for="isReadyForAdoption">Ready For Adoption?</label>
+                    <input type ="checkbox" name="isReadyForAdoption" id="isReadyForAdoption" <% if (pet.isReadyForAdoption) { %>checked<% } %> >
+                </div>
             </fieldset>
 
             <fieldset>
